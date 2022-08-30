@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COLORS</title>
+    <script src="https://kit.fontawesome.com/e0fc32bd82.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+    <div class="sort-bg darked-bg hidden" id="sortBg"></div>
+    
+    <div class="mobile-products-categories-wrapper hidden" id="mobileProductsCategoriesWrapper">
+        <div class="mobile-products-categories-bg" id="mobileProductsCategoriesBackground"></div>
+        <div class="mobile-products-categories" id="mobileProductsCategoriesBlock">
+            <div class="mobile-products-category">
+                <label class="mobile-products-category-switcher" id="mobileFilterIsNew">
+                    <input type="checkbox" class="mobile-products-category-switcher-checkbox" id="mobileFilterIsNewCheckbox">
+                    <span class="mobile-switcher-dot"></span>
+                </label>
+                <span class="mobile-products-category-heading">НОВИНКИ</span>
+            </div>
+            <div class="mobile-products-category">
+                <label class="mobile-products-category-switcher" id="mobileFilterIsInStock">
+                    <input type="checkbox" class="mobile-products-category-switcher-checkbox" id="mobileFilterIsInStockCheckbox">
+                    <span class="mobile-switcher-dot"></span>
+                </label>
+                <span class="mobile-products-category-heading">ЕСТЬ В НАЛИЧИИ</span>
+            </div>
+            <div class="mobile-products-category">
+                <label class="mobile-products-category-switcher" id="mobileFilterIsContracted">
+                    <input type="checkbox" class="mobile-products-category-switcher-checkbox" id="mobileFilterIsContractedCheckbox">
+                    <span class="mobile-switcher-dot"></span>
+                </label>
+                <span class="mobile-products-category-heading">КОНТРАКТНЫЕ</span>
+            </div>
+            <div class="mobile-products-category">
+                <label class="mobile-products-category-switcher" id="mobileFilterIsExclusive">
+                    <input type="checkbox" class="mobile-products-category-switcher-checkbox" id="mobileFilterIsExclusiveCheckbox">
+                    <span class="mobile-switcher-dot"></span>
+                </label>
+                <span class="mobile-products-category-heading">ЭКСКЛЮЗИВНЫЕ</span>
+            </div>
+            <div class="mobile-products-category">
+                <label class="mobile-products-category-switcher" id="mobileFilterIsOnSale">
+                    <input type="checkbox" class="mobile-products-category-switcher-checkbox" id="mobileFilterIsOnSaleCheckbox">
+                    <span class="mobile-switcher-dot"></span>
+                </label>
+                <span class="mobile-products-category-heading">РАСПРОДАЖА</span>
+            </div>
+        </div>
+    </div>
+    
+
+    <section class="shopping-cart-wrapper hidden" id="shoppingCartWrapper">
+        <div class="shopping-cart-bg cart-switch"></div>
+        <div class="shopping-cart">
+            <div class="shopping-cart-top">
+                <div class="shopping-cart-top-line">
+                    <span class="shopping-cart-top-line-heading">Корзина</span>
+                    <button class="shopping-cart-top-line-close cart-switch">
+                        <img src="assets/img/close.svg" alt="" class="shopping-cart-top-line-close-pic">
+                    </button>
+                </div>
+
+                <div class="shopping-cart-count-line">
+                    <span class="shopping-cart-count" id="shoppingCartCount">4 товара</span>
+                    <button class="shopping-cart-clear" id="shoppingCartErase">ОЧИСТИТЬ СПИСОК</button>
+                </div>
+                <div class="shopping-cart-products" id="shoppingCartProducts">
+                    <template id="shoppingCartItemTemplate">
+                        <div class="shopping-cart-product">
+                            <img src="assets/img/product2.png" alt="" class="shopping-cart-product-pic">
+                            <div class="shopping-cart-product-info">
+                                <span class="shopping-cart-product-name">Краска Wallquest, Brownsone MS90102</span>
+                                <span class="shopping-cart-product-price">9600 Р</span>
+                            </div>
+                            <div class="shopping-cart-product-quantity">
+                                <button class="quantity-button minus">
+                                    <img src="assets/img/minus.svg" alt="">
+                                </button>
+                                <span class="quantity">2</span>
+                                <button class="quantity-button plus">
+                                    <img src="assets/img/plus.svg" alt="">
+                                </button>
+                            </div>
+                            <button class="shopping-cart-product-button delete">
+                                <img class="shopping-cart-product-button-pic" src="assets/img/cross.svg" alt="">
+                            </button>
+                        </div>
+                    </template>
+                </div>
+            </div>
+            <div class="shopping-cart-bottom">
+                <div class="shopping-cart-bottom-price">
+                    <span class="shopping-cart-bottom-price-small">Итого</span>
+                    <span class="shopping-cart-bottom-price-big" id="shoppingCartTotalPrice">14 400Р</span>
+                </div>
+                <button class="shopping-cart-bottom-order" id="shoppingCartOrder">
+                    ОФОРМИТЬ ЗАКАЗ
+                </button>
+            </div>
+        </div>
+    </section>
+    <header class="header-wrapper">
+        <div class="container desktop-header">
+            <div class="desktop-header-logo-wrapper">
+                <img src="assets/img/logo.svg" alt="" class="desktop-header-logo">
+            </div>
+            <div class="desktop-header-links">
+                <a href="" class="desktop-header-link">ПРОДУКТЫ</a>
+                <a href="" class="desktop-header-link">ЦВЕТА</a>
+                <a href="" class="desktop-header-link">ВДОХНОВЕНИЕ</a>
+                <a href="" class="desktop-header-link">СОВЕТЫ</a>
+                <a href="" class="desktop-header-link">НАЙТИ МАГАЗИН</a>
+            </div>
+            <div class="desktop-header-contact">
+                <a href="tel:+7-495-221-77-69" class="desktop-header-phone">+7 (495) 221-77-69</a>
+                <button class="desktop-header-callback">Заказать звонок</button>
+            </div>
+            <div class="desktop-header-menu-buttons">
+                <button class="desktop-header-menu-button">
+                    <img class="desktop-header-menu-icon" src="assets/img/search.svg" alt="">
+                </button>
+                <button class="desktop-header-menu-button">
+                    <img class="desktop-header-menu-icon" src="assets/img/profile.svg" alt="">
+                </button>
+                <button class="desktop-header-menu-button">
+                    <img class="desktop-header-menu-icon" src="assets/img/heart.svg" alt="">
+                </button>
+                <button class="desktop-header-menu-button cart cart-switch" id="desktopHeaderCartButton">4</button>
+            </div>
+        </div>
+        <div class="mobile-header-wrapper">
+            <div class="mobile-header-top-wrapper">
+                <div class="mobile-header-top">
+                    <button class="mobile-header-top-menu-button" id="mobileHeaderBurgerButton">
+                        <img src="assets/img/burger-close.svg" class="mobile-header-top-menu-button-pic hidden" alt="">
+                        <img src="assets/img/burger-open.svg" class="mobile-header-top-menu-button-pic" alt="">
+                    </button>
+                    <a class="mobile-header-top-logo">
+                        <img src="assets/img/logo.svg" alt="">
+                    </a>
+                    <button class="mobile-header-menu-button cart cart-switch" id="mobileHeaderCartButton">4</button>
+                </div>
+            </div>
+            <div class="mobile-header-bottom hidden" id="mobileHeaderBottom">
+                <div class="mobile-header-bottom-links">
+                    <a href="" class="mobile-header-bottom-link">+7(495)221-77-69</a>
+                    <a href="" class="mobile-header-bottom-link">ПРОДУКТЫ</a>
+                    <a href="" class="mobile-header-bottom-link">ЦВЕТА</a>
+                    <a href="" class="mobile-header-bottom-link">ВДОХНОВЕНИЕ</a>
+                    <a href="" class="mobile-header-bottom-link">СОВЕТЫ</a>
+                    <a href="" class="mobile-header-bottom-link">НАЙТИ МАГАЗИН</a>
+                    <div class="mobile-header-bottom-buttons">
+                        <button class="mobile-header-bottom-button">
+                            <img class="mobile-header-bottom-button-icon" src="assets/img/search.svg" alt="">
+                        </button>
+                        <button class="mobile-header-bottom-button">
+                            <img class="mobile-header-bottom-button-icon" src="assets/img/profile.svg" alt="">
+                        </button>
+                        <button class="mobile-header-bottom-button">
+                            <img class="mobile-header-bottom-button-icon" src="assets/img/heart.svg" alt="">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <main>
+        <section class="swiper">
+            <div class="swiper-stages">
+                <span class="swiper-stage">ГЛАВНАЯ</span>
+                <span class="swiper-stage">ПРОДУКТЫ</span>
+                <span class="swiper-stage">КРАСКИ</span>
+            </div>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <h2 class="swiper-slide-heading">Краски</h2>
+                    <article class="swiper-slide-description">Идеально подходят для стен и других
+                        поверхностей.<br />Найди свой идеальный цвет!</article>
+                </div>
+                <div class="swiper-slide">
+                    <h2 class="swiper-slide-heading">Краски</h2>
+                    <article class="swiper-slide-description">Идеально подходят для стен и других
+                        поверхностей.<br />Найди свой идеальный цвет!</article>
+                </div>
+                <div class="swiper-slide">
+                    <h2 class="swiper-slide-heading">Краски</h2>
+                    <article class="swiper-slide-description">Идеально подходят для стен и других
+                        поверхностей.<br />Найди свой идеальный цвет!</article>
+                </div>
+                <div class="swiper-slide">
+                    <h2 class="swiper-slide-heading">Краски</h2>
+                    <article class="swiper-slide-description">Идеально подходят для стен и других
+                        поверхностей.<br />Найди свой идеальный цвет!</article>
+                </div>
+                <div class="swiper-slide">
+                    <h2 class="swiper-slide-heading">Краски</h2>
+                    <article class="swiper-slide-description">Идеально подходят для стен и других
+                        поверхностей.<br />Найди свой идеальный цвет!</article>
+                </div>
+                <div class="swiper-slide">
+                    <h2 class="swiper-slide-heading">Краски</h2>
+                    <article class="swiper-slide-description">Идеально подходят для стен и других
+                        поверхностей.<br />Найди свой идеальный цвет!</article>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-scrollbar"></div>
+        </section>
+
+        <section class="mobile-upper-block">
+            <div class="mobile-upper-block-stages">
+                <span class="mobile-upper-block-stage">ГЛАВНАЯ</span>
+                <span class="mobile-upper-block-stage">ПРОДУКТЫ</span>
+                <span class="mobile-upper-block-stage">КРАСКИ</span>
+            </div>
+            <h2 class="mobile-upper-block-heading">КРАСКИ</h2>
+        </section>
+
+        <section class="products-wrapper">
+            <div class="container">
+                <div class="products-categories" id="productsCategoriesBlock">
+                    <div class="products-category">
+                        <label class="products-category-switcher" id="filterIsNew">
+                            <input type="checkbox" class="products-category-switcher-checkbox" id="filterIsNewCheckbox">
+                            <span class="switcher-dot"></span>
+                        </label>
+                        <span class="products-category-heading">НОВИНКИ</span>
+                    </div>
+                    <div class="products-category">
+                        <label class="products-category-switcher" id="filterIsInStock">
+                            <input type="checkbox" class="products-category-switcher-checkbox" id="filterIsInStockCheckbox">
+                            <span class="switcher-dot"></span>
+                        </label>
+                        <span class="products-category-heading">ЕСТЬ В НАЛИЧИИ</span>
+                    </div>
+                    <div class="products-category">
+                        <label class="products-category-switcher" id="filterIsContracted">
+                            <input type="checkbox" class="products-category-switcher-checkbox" id="filterIsContractedCheckbox">
+                            <span class="switcher-dot"></span>
+                        </label>
+                        <span class="products-category-heading">КОНТРАКТНЫЕ</span>
+                    </div>
+                    <div class="products-category">
+                        <label class="products-category-switcher" id="filterIsExclusive">
+                            <input type="checkbox" class="products-category-switcher-checkbox" id="filterIsExclusiveCheckbox">
+                            <span class="switcher-dot"></span>
+                        </label>
+                        <span class="products-category-heading">ЭКСКЛЮЗИВНЫЕ</span>
+                    </div>
+                    <div class="products-category">
+                        <label class="products-category-switcher" id="filterIsOnSale">
+                            <input type="checkbox" class="products-category-switcher-checkbox" id="filterIsOnSaleCheckbox">
+                            <span class="switcher-dot"></span>
+                        </label>
+                        <span class="products-category-heading">РАСПРОДАЖА</span>
+                    </div>
+                </div>
+                <div class="products-content">
+                    <div class="products-filters-line">
+                        <button class="products-filters-button" id="productsFilterButton">ФИЛЬТРЫ</button>
+                        <span class="products-count" id="productsCount">412 ТОВАРОВ</span>
+                        <div class="products-sort-buttons-wrapper">
+                            <button class="products-sort-buttons-opener" id="productsSortButtonsOpener">СНАЧАЛА
+                                ДОРОГИЕ</button>
+                            <div class="products-sort-buttons hidden" id="productsSortButtons">
+                                <button class="products-sort-button active" id="expensiveFirst">СНАЧАЛА ДОРОГИЕ</button>
+                                <button class="products-sort-button" id="cheapFirst">СНАЧАЛА ДЕШЁВЫЕ</button>
+                                <button class="products-sort-button" id="popularFirst">СНАЧАЛА ПОПУЛЯРНЫЕ</button>
+                                <button class="products-sort-button" id="newFirst">СНАЧАЛА НОВЫЕ</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="products-cards" id="productsCards">
+                        <template id="productCardTemplate">
+                            <div class="product-card">
+                                <img src="assets/img/product1.png" alt="" class="product-card-pic">
+                                <span class="product-card-name">Краска Wallquest, Brownsone MS90102</span>
+                                <div class="product-card-buy">
+                                    <span class="product-card-price">6000 ₽</span>
+                                    <button class="product-card-add"></button>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="js/jquery.maskedinput.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script src="js/products.js"></script>
+<script src="js/script.js"></script>
+
+</html>
